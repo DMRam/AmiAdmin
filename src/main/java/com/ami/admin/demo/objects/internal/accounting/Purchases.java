@@ -8,4 +8,6 @@ package com.ami.admin.demo.objects.internal.accounting;
  * @project demo
  */
 public class Purchases {
+
+    // Adding some comments
 }
