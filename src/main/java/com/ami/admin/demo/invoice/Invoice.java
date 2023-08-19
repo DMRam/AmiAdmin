@@ -1,5 +1,7 @@
 package com.ami.admin.demo.invoice;
 
+import org.springframework.stereotype.Component;
+
 /**
  * <p>
  * </p>
@@ -7,5 +9,6 @@ package com.ami.admin.demo.invoice;
  * @author dannymunoz on 2023-08-18
  * @project demo
  */
+@Component
 public class Invoice {
 }

@@ -1,4 +1,6 @@
-package com.ami.admin.demo.modelo;
+package com.ami.admin.demo.model;
+
+import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -7,5 +9,6 @@ package com.ami.admin.demo.modelo;
  * @author dannymunoz on 2023-08-18
  * @project demo
  */
+@Component
 public class Employee {
 }

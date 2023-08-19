@@ -1,4 +1,4 @@
-package com.ami.admin.demo.modelo;
+package com.ami.admin.demo.model;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
