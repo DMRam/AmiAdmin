@@ -11,12 +11,17 @@ import org.springframework.stereotype.Component;
  * @author dannymunoz on 2023-08-18
  * @project demo
  */
-@Component
 public class Customer {
 
     public String id;
     public String name;
     public String address;
+
+    public Customer(String id, String name, String address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
 
     public String getId() {
         return id;

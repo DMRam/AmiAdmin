@@ -24,6 +24,11 @@ public class BusinessController {
     @Autowired
     BusinessDataService businessDataService;
 
+    /**
+     * @return
+     * @throws ExecutionException
+     * @throws InterruptedException
+     */
     @GetMapping("/all")
     public ResponseEntity<List<Business>> getBusiness() throws ExecutionException, InterruptedException {
         return new ResponseEntity<>(businessDataService.getData().get(), HttpStatus.OK);
@@ -40,4 +45,25 @@ public class BusinessController {
 
         businessDataService.addData(business);
     }
+
+    /**
+     * @param id
+     */
+    @DeleteMapping("/delete/")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteBusinessModel(@RequestParam String id) {
+
+        System.out.println(id + " <------------ PASSING ID");
+        businessDataService.deleteBusinessById(id);
+    }
+
+    /**
+     * @param business
+     */
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.OK)
+    public void updateBusinessModel(@RequestBody Business business) {
+        businessDataService.updateBusinessById(business);
+    }
+
 }

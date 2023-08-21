@@ -13,6 +13,7 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * <p>
+ * GET - ADD - UPDATE - DELETE
  * </p>
  *
  * @author dannymunoz on 2023-08-18
@@ -90,6 +91,58 @@ public class BusinessDataService {
             });
         } catch (Exception e) {
             // Handle the exception here
+            System.out.println("An exception occurred: " + e.getMessage());
+        }
+    }
+
+    /**
+     * @param id
+     */
+    public void deleteBusinessById(String id) {
+
+        try {
+            DatabaseReference ref = firebaseDatabase.getReference("ami_admin_bus/" + id);
+
+            System.out.println("Reference to be removed: " + ref);
+
+            ref.removeValue((error, ref1) -> {
+                if (error != null) {
+                    System.err.println("Error removing element: " + error.getMessage());
+                } else {
+                    System.out.println("Element removed successfully");
+                }
+            });
+        } catch (Exception e) {
+            // Handle the exception here
+            System.out.println("An exception occurred: " + e.getMessage());
+        }
+    }
+
+    /**
+     * <p>
+     *
+     * </p>
+     *
+     * @param business
+     */
+    public void updateBusinessById(Business business) {
+        try {
+            DatabaseReference ref = firebaseDatabase.getReference("ami_admin_bus/" + business.getId());
+
+            ref.setValue(business, new DatabaseReference.CompletionListener() {
+                @Override
+                public void onComplete(DatabaseError error, DatabaseReference ref) {
+                    if (error != null) {
+                        // Handle the error
+                        System.out.println("Not Done");
+                    } else {
+                        // The operation completed successfully
+                        System.out.println("The operation completed successfully");
+                    }
+                }
+            });
+
+        } catch (Exception e) {
             System.out.println("An exception occurred: " + e.getMessage());
         }
 
