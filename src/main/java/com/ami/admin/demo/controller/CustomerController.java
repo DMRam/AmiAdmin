@@ -30,7 +30,7 @@ public class CustomerController {
      * @throws InterruptedException
      */
     @GetMapping("/all")
-    public ResponseEntity<List<Customer>> getBusiness() throws ExecutionException, InterruptedException {
+    public ResponseEntity<List<Customer>> getCustomer() throws ExecutionException, InterruptedException {
         return new ResponseEntity<>(customerDataService.getCustomerData().get(), HttpStatus.OK);
     }
 
