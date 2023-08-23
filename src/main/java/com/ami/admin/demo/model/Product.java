@@ -11,14 +11,10 @@ import org.springframework.stereotype.Component;
  * @author dannymunoz on 2023-08-18
  * @project demo
  */
-@Component
 public class Product {
     public String id;
     public String name;
-    public double price;
-
-    public Product() {
-    }
+    public Double price;
 
     public Product(String id, String name, double price) {
         this.id = id;
@@ -42,11 +38,11 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
