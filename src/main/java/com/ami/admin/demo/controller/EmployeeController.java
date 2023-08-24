@@ -42,7 +42,7 @@ public class EmployeeController {
      */
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addCustomer(@RequestBody Employee employee) {
+    public void addEmployee(@RequestBody Employee employee) {
 
         employeeDataService.addEmployeeData(employee);
     }
@@ -52,7 +52,7 @@ public class EmployeeController {
      */
     @DeleteMapping("/delete/")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteCustomerModel(@RequestParam String id) {
+    public void deleteEmployeeModel(@RequestParam String id) {
 
         employeeDataService.deleteEmployeeById(id);
     }
@@ -62,7 +62,7 @@ public class EmployeeController {
      */
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public void updateCustomerModel(@RequestBody Employee employee) {
+    public void updateEmployeeModel(@RequestBody Employee employee) {
         employeeDataService.updateEmployeeById(employee);
     }
 }

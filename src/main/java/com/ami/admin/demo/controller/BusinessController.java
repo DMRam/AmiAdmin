@@ -41,7 +41,7 @@ public class BusinessController {
      */
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
-    public void addDataToFirebase(@RequestBody Business business) {
+    public void addDBusiness(@RequestBody Business business) {
 
         businessDataService.addData(business);
     }
@@ -53,7 +53,6 @@ public class BusinessController {
     @ResponseStatus(HttpStatus.OK)
     public void deleteBusinessModel(@RequestParam String id) {
 
-        System.out.println(id + " <------------ PASSING ID");
         businessDataService.deleteBusinessById(id);
     }
 

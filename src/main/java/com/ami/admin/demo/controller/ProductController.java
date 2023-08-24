@@ -49,7 +49,7 @@ public class ProductController {
      */
     @DeleteMapping("/delete/")
     @ResponseStatus(HttpStatus.OK)
-    public void deleteCustomerModel(@RequestParam String id) {
+    public void deleteProductModel(@RequestParam String id) {
 
         productDataService.deleteProductById(id);
     }
@@ -59,7 +59,7 @@ public class ProductController {
      */
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.OK)
-    public void updateCustomerModel(@RequestBody Product product) {
+    public void updateProductModel(@RequestBody Product product) {
         productDataService.updateProductById(product);
     }
 }

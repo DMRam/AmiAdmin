@@ -2,7 +2,6 @@ package com.ami.admin.demo.model;
 
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.PreDestroy;
-import org.springframework.stereotype.Component;
 
 /**
  * <p>
@@ -16,6 +15,8 @@ public class Customer {
     public String id;
     public String name;
     public String address;
+
+    public Customer(){}
 
     public Customer(String id, String name, String address) {
         this.id = id;
